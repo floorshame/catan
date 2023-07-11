@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from catan.bunge.io/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jul 2023 08:15:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Catan Board Generator - Settlers of Catan Map Builder</title>
+    <meta name="description"
+        content="Settlers of Catan Map Generator for normal and expansion. Build fair boards that follow your custom house rules.">
+
+    <link rel="stylesheet" type="text/css" href="common.css">
+    <link rel="stylesheet" type="text/css" href="map_select.css">
+    <link rel="stylesheet" type="text/css" href="style_by_orientation.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+</head>
+
+<body>
+
+    <header class="newTitle" id="title">
+        <h1><span class="theBetterTitle">The Better</span><br>
+            <span class="catanTitle">Catan Board</span><br>
+            <span class="generatorTitle">Generator</span>
+        </h1>
+        <nav class="myNav">
+            <ul>
+                <li class="myLi">
+                    <a class="links" href="https://forms.gle/JuTFRjxeffMhPYss6" target="_blank">Feedback</a>
+                </li>
+                <li class="myLi">
+                    <a class="links" href="https://www.bunge.io/" target="_blank">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <section id="top_content">
+            <section id="map-select">
+                <div class="map-select-menu-row-center">
+                    <label class="map-button selected-map-button">Classic</label>
+                    <a class="map-links" href="expansion.html">
+                        <label class="map-button available-map-button">Expansion</label>
+                    </a>
+                </div>
+            </section>
+            <div class="description">
+                <p>Map generator for Settlers of Catan for Normal and Expansion Pack. Use the generation options to
+                    build a
+                    board that works for your house rules.</p>
+            </div>
+            <section id="inline-options">
+                <button id="btnOps" type="button" class="commonOpsbutton" onclick="toggleOptions()">Options</button>
+                <button type="button" class="commonShuffle" onclick="generateBoard()">Shuffle</button>
+            </section>
+        </section>
+    </header>
+
+    <section class="commonNormalBoard board" id="board"></section>
+    <section id="popmenu" class="menuToggle">
+        <h2>Generation Custom Rules</h2><br>
+        <div class="settingswrap">
+            <input id="selected-map" type="hidden" value="normal" />
+            <div class="menu-row">
+                <label class="mylabel">6 & 8 Can Touch</label>
+                <input id="adjacent_6_8_input" onchange="toggleSetting('6_8')" type="checkbox"><br>
+            </div>
+            <div class="menu-row">
+                <label class="mylabel">2 & 12 Can Touch</label>
+                <input id="adjacent_2_12_input" onchange="toggleSetting('2_12')" type="checkbox"><br>
+            </div>
+            <div class="menu-row">
+                <label class="mylabel">Same Numbers Can Touch</label>
+                <input id="adjacent_same_numbers_input" onchange="toggleSetting('same_number')" type="checkbox"><br>
+            </div>
+            <div id="sameResourceSetting" class="menu-row">
+                <label class="mylabel">Same Resource Can Touch</label>
+                <input id="adjacent_same_resource_input" onchange="toggleSetting('same_resource')" type="checkbox"><br>
+            </div>
+            <button type="button" class="menuclosebutton" onclick="toggleOptions()">Close Options</button>
+        </div>
+
+    </section>
+    <footer></footer>
+</body>
+
+<script type="text/javascript" src="index.min.js"></script>
